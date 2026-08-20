@@ -1,47 +1,100 @@
-Absolutely. Here is the **complete README.md** in one piece. You can copy **everything inside the code block** and paste it directly into your `README.md`.
-
-````markdown
 # 💰 Python Expense Tracker
 
-A simple automated expense tracking system built with Python.
+A Python-based expense tracking and budget management application with a command-line interface, CSV data storage, automated expense analysis, unit testing, and an interactive Streamlit dashboard.
+
+---
 
 ## 📌 Project Overview
 
-The Python Expense Tracker is a command-line expense management application
-that allows users to record, analyze, and manage their daily expenses.
+The Python Expense Tracker is a practical expense management application that allows users to record, analyze, and manage their expenses.
 
-The application calculates spending statistics, tracks the user's budget,
-identifies spending patterns, provides budget alerts and spending insights,
-and stores expense information using CSV files.
+The application can:
 
-The project also includes a user-friendly dashboard for visualizing expense
-information.
+- Manage a monthly budget
+- Add multiple expenses
+- Store expense information using CSV files
+- Calculate spending statistics
+- Analyze spending by category
+- Identify the highest spending category
+- Identify the highest individual expense
+- Calculate remaining budget
+- Detect when the budget is exceeded
+- Provide budget alerts
+- Generate spending insights
+- Maintain expense data between program runs
+- Start a new month with a new budget
+- Clear previous month's expenses when starting a new month
+- Display financial information through a Streamlit dashboard
+- Run automated unit tests
+
+The project is organized into separate Python modules to keep the application maintainable and easy to understand.
 
 ---
 
 ## 🚀 Features
 
+### Expense Management
+
 - Add multiple expenses
 - Store expense amount, category, and description
+- Validate expense amounts
+- Prevent empty categories
+- Prevent empty descriptions
+- Load previously saved expenses
+- Save expenses to CSV
+
+### Monthly Budget Management
+
+- Set a monthly budget
+- Automatically load the existing monthly budget
+- Continue using the current month's budget
+- Start a new month
+- Set a new monthly budget
+- Clear previous month's expenses when starting a new month
+- Calculate remaining budget
+- Detect budget overuse
+
+### Expense Analysis
+
 - Calculate total expenses
 - Calculate average expense
 - Count the number of expenses
-- Track total spending by category
+- Calculate category totals
+- Calculate spending percentages
 - Identify the highest spending category
 - Identify the highest individual expense
-- Calculate remaining budget
-- Detect when the budget is exceeded
-- Provide budget usage alerts
-- Show spending breakdown by percentage
-- Provide spending insights
-- Save expenses to CSV
-- Load previously saved expenses
-- Save summary reports to CSV
-- Validate user input
-- Display an expense dashboard
-- Maintain expense data between program runs
-- Separate application logic into Python modules
-- Include basic tests for important functionality
+- Generate spending insights
+
+### Budget Alerts
+
+The application provides feedback based on budget usage.
+
+Examples include:
+
+- Spending under control
+- Warning when spending approaches the budget
+- Alert when the budget is exceeded
+
+### Dashboard
+
+The Streamlit dashboard provides:
+
+- Monthly budget
+- Total expenses
+- Remaining budget
+- Number of expenses
+- Budget status
+- Budget usage progress
+- Category spending
+- Spending percentages
+- Spending charts
+- Spending insights
+- Highest spending category
+- Highest individual expense
+- Expense history
+- Add Expense functionality
+- Start New Month functionality
+- Dashboard refresh functionality
 
 ---
 
@@ -51,6 +104,8 @@ information.
 - CSV
 - File Handling
 - Streamlit
+- Pandas
+- unittest
 - Git
 - GitHub
 
@@ -72,36 +127,55 @@ This project applies the following Python concepts:
 - Functions
 - String methods
 - String formatting
-- Basic arithmetic
+- Arithmetic operations
 - File handling
 - CSV reading and writing
 - Exception handling
 - Data processing
 - Modular programming
-- Basic testing
+- Unit testing
+- Importing modules
 
 ---
 
 ## 📊 Dashboard
 
-The project includes a user-friendly dashboard that provides an overview
-of the user's financial activity.
+The project includes an interactive Streamlit dashboard designed to make expense information easier to understand.
 
-The dashboard provides information such as:
+The dashboard provides:
 
-- Total budget
+### Financial Overview
+
+- Monthly budget
 - Total expenses
 - Remaining budget
+- Number of expenses
+
+### Budget Monitoring
+
 - Budget status
-- Budget usage
-- Category spending
+- Budget usage percentage
+- Visual budget progress
+- Budget exceeded warnings
+
+### Spending Analysis
+
+- Category totals
 - Spending percentages
+- Spending chart
 - Highest spending category
 - Highest individual expense
-- Expense history
+- Spending insights
 
-The dashboard is designed to make the expense data easier to understand
-than the command-line output alone.
+### Expense Management
+
+The dashboard also allows users to:
+
+- Add new expenses
+- Start a new month
+- Set a new monthly budget
+- Clear the previous month's expenses
+- Refresh dashboard data
 
 ---
 
@@ -112,6 +186,7 @@ expense-tracker/
 │
 ├── data/
 │   ├── expenses.csv
+│   ├── budget.csv
 │   └── summary.csv
 │
 ├── src/
@@ -124,290 +199,283 @@ expense-tracker/
 │   └── app.py
 │
 ├── tests/
-│   └── test_expense_tracker.py
+│   └── test_expense_manager.py
 │
 ├── README.md
 ├── requirements.txt
 └── .gitignore
-````
 
-### Folder and File Description
+Folder and File Description
+File / Folder	Purpose
+data/	Stores application data and reports
+expenses.csv	Stores recorded expenses
+budget.csv	Stores the current monthly budget
+summary.csv	Stores expense summary information
+src/main.py	Runs the command-line application
+src/expense_manager.py	Handles expense input and management
+src/analyzer.py	Performs expense calculations and analysis
+src/file_manager.py	Handles CSV file operations and budget storage
+dashboard/app.py	Provides the interactive Streamlit dashboard
+tests/	Contains automated unit tests
+test_expense_manager.py	Tests important expense analysis functionality
+requirements.txt	Lists required external Python packages
+.gitignore	Specifies files Git should ignore
+README.md	Project documentation
+💾 Data Storage
 
-| File / Folder            | Purpose                                    |
-| ------------------------ | ------------------------------------------ |
-| `data/`                  | Stores application data and reports        |
-| `expenses.csv`           | Stores recorded expenses                   |
-| `summary.csv`            | Stores expense summary information         |
-| `src/main.py`            | Runs the main application                  |
-| `src/expense_manager.py` | Handles adding and managing expenses       |
-| `src/analyzer.py`        | Performs expense calculations and analysis |
-| `src/file_manager.py`    | Handles CSV file operations                |
-| `dashboard/app.py`       | Provides the user-friendly dashboard       |
-| `tests/`                 | Contains project tests                     |
-| `requirements.txt`       | Lists required external Python packages    |
-| `.gitignore`             | Specifies files Git should ignore          |
-| `README.md`              | Project documentation                      |
+The application uses CSV files for persistent data storage.
 
----
-
-## 💾 Data Storage
-
-The application uses CSV files to store information.
-
-### Expense Data
+Expense Data
 
 Expense information is stored in:
 
-```text
 data/expenses.csv
-```
 
 The file contains:
 
-```text
 Amount,Category,Description
-```
 
 Example:
 
-```text
-500.0,food,fish
-100.0,drink,cola
-30.0,food,chips
-```
+250.00,food,lunch
+100.00,transport,bus fare
+500.00,shopping,shoes
+Budget Data
 
-### Summary Data
+The current monthly budget is stored in:
+
+data/budget.csv
+
+Example:
+
+Month,Budget
+2026-08,50000.00
+Summary Data
 
 A summary report is stored in:
 
-```text
 data/summary.csv
-```
 
-The summary contains information such as:
+The summary can contain information such as:
 
-* Total budget
-* Total expenses
-* Number of expenses
-* Average expense
-* Remaining budget
-* Highest spending category
-* Highest category amount
-* Highest individual expense
+Total budget
+Total expenses
+Number of expenses
+Average expense
+Remaining budget
+Highest spending category
+Highest category amount
+Highest individual expense
+Highest expense category
+Highest expense description
 
-Using CSV files allows the application to preserve data between program
-runs.
+Using CSV files allows the application to preserve data between program runs.
 
----
+📅 Monthly Budget Management
 
-## ▶️ How to Run
+The application supports multiple monthly budget cycles.
 
-### 1. Open the Project
+When the application is started, the user can choose whether to:
 
-Open the `expense-tracker` folder in Visual Studio Code.
+1. Continue current month
+2. Start a new month
+Continue Current Month
 
-### 2. Run the Python Application
+The existing monthly budget and expenses are loaded.
 
-Open the VS Code terminal and run:
+The user can continue adding expenses without entering the budget again.
 
-```bash
+Start New Month
+
+The user can enter a new monthly budget.
+
+The previous month's expenses are cleared and the new month starts with an empty expense list.
+
+Example:
+
+Starting a new month...
+Enter your new monthly budget: 40000
+
+
+New monthly budget saved: 40000.00
+Previous month's expenses have been cleared.
+
+This allows the application to be reused month after month.
+
+▶️ How to Run
+1. Open the Project
+
+Open the expense-tracker folder in Visual Studio Code.
+
+2. Install Dependencies
+
+Open the terminal and run:
+
+pip install -r requirements.txt
+3. Run the Command-Line Application
+
+Run:
+
 python src/main.py
-```
 
-The application will ask for:
+The application allows you to manage your monthly budget and add expenses.
 
-* Total budget
-* Expense amount
-* Expense category
-* Expense description
-* Whether another expense should be added
+4. Run the Dashboard
 
-### 3. Run the Dashboard
+Launch the Streamlit dashboard using:
 
-After installing the required packages, run:
-
-```bash
 streamlit run dashboard/app.py
-```
 
 The dashboard will open in your web browser.
 
----
+📦 Requirements
 
-## 📦 Installation
+The main external packages used by the dashboard are:
 
-Clone or download the project and open it in Visual Studio Code.
+Streamlit
+Pandas
 
-Install the required Python packages using:
+They are listed in:
 
-```bash
+requirements.txt
+
+Install them with:
+
 pip install -r requirements.txt
-```
+🧪 Testing
 
-Then run the application:
+The project includes automated unit tests for important expense analysis functionality.
 
-```bash
-python src/main.py
-```
+The tests verify functionality such as:
 
-To launch the dashboard:
+Total expense calculation
+Average expense calculation
+Number of expenses
+Empty expense handling
+Category totals
+Highest spending category
+Highest individual expense
+Budget exceeded status
+Budget within limit status
 
-```bash
-streamlit run dashboard/app.py
-```
+Run the complete test suite using:
 
----
+python -m unittest discover -s tests -v
 
-## 🧪 Testing
+Example successful output:
 
-The project includes basic tests for important functionality.
+Ran 9 tests
 
-Testing helps verify that calculations and application components work
-correctly.
 
-The tests can be run using:
-
-```bash
-python -m unittest discover tests
-```
-
----
-
-## 🛡️ Input Validation
+OK
+🛡️ Input Validation
 
 The application validates user input to prevent common errors.
 
 Examples include:
 
-* Preventing invalid expense amounts
-* Preventing negative expense amounts
-* Preventing invalid budgets
-* Preventing empty categories
-* Preventing empty descriptions
-* Validating `yes/no` responses
-* Handling missing CSV files
+Preventing invalid expense amounts
+Preventing negative expense amounts
+Preventing invalid budgets
+Preventing empty categories
+Preventing empty descriptions
+Validating yes/no responses
+Handling missing CSV files
 
-For example, entering:
+For example:
 
-```text
 Enter the expense amount: abc
-```
 
-will not crash the program. Instead, the user is asked to enter a valid
-number.
+The application handles invalid input instead of allowing the program to crash.
 
----
+📈 Expense Analysis
 
-## 📈 Expense Analysis
+The application analyzes recorded expenses and calculates several useful metrics.
 
-The application analyzes recorded expenses and calculates:
-
-### Total Expense
+Total Expense
 
 The total amount spent across all recorded expenses.
 
-### Average Expense
+Average Expense
 
 The average amount spent per expense.
 
-### Category Totals
+Category Totals
 
 The total amount spent within each category.
 
-### Spending Breakdown
+Spending Breakdown
 
 The percentage of total spending represented by each category.
 
-### Highest Spending Category
+Highest Spending Category
 
 The category with the highest total spending.
 
-### Highest Individual Expense
+Highest Individual Expense
 
 The single expense with the highest amount.
 
-### Budget Status
+Budget Status
 
-The application compares total spending with the user's budget and reports
-whether the user is:
+The application compares total spending with the monthly budget and reports whether spending is:
 
-* Within budget
-* Near the budget limit
-* Over budget
+Within budget
+Approaching the budget limit
+Over budget
+🚨 Budget Alerts
 
----
-
-## 🚨 Budget Alerts
-
-The application provides different budget messages depending on spending.
+The application provides different messages depending on budget usage.
 
 For example:
 
-```text
 Budget Usage: 50%
 Your spending is under control.
-```
 
 When spending approaches the budget:
 
-```text
 WARNING: You have used 90% of your budget!
 Remaining Budget: 100.00
-```
 
 When spending exceeds the budget:
 
-```text
 ALERT: Your budget has been exceeded!
+
+
 Budget Usage: 110%
 Amount Over Budget: 100.00
-```
+💡 Spending Insights
 
----
-
-## 💡 Spending Insights
-
-The application provides simple spending insights based on the recorded
-expense data.
+The application generates simple insights based on spending patterns.
 
 For example:
 
-```text
 food is your largest spending area, using 75.3% of your total spending.
-```
 
-These insights help users quickly understand where most of their money
-is being spent.
+These insights help users quickly understand where most of their money is being spent.
 
----
-
-## 🔮 Future Improvements
+🔮 Future Improvements
 
 Possible future improvements include:
 
-* Monthly expense reports
-* Expense search and filtering
-* Expense editing
-* Expense deletion
-* Date-based expense tracking
-* Charts and visual analytics
-* More advanced dashboard features
-* Exporting reports in additional formats
-* Automated scheduled reports
-* More advanced financial insights
-* Linux-based automation
+Monthly historical reports
+Expense search and filtering
+Expense editing
+Expense deletion
+Date-based expense tracking
+More advanced dashboard visualizations
+Exporting reports in additional formats
+Automated scheduled reports
+More advanced financial insights
+Linux-based automation
+Database integration
+User authentication
+🎯 Learning Purpose
 
----
+This project was created to apply Python programming concepts to a practical automation problem.
 
-## 🎯 Learning Purpose
+Instead of learning Python concepts individually, the project combines them into a complete application:
 
-This project was created to apply Python programming concepts to a
-practical automation problem.
-
-Instead of learning Python concepts individually, the project combines
-them into a complete application involving:
-
-```text
 User Input
      ↓
 Data Processing
@@ -418,33 +486,18 @@ Calculations
      ↓
 Analysis
      ↓
-Budget Alerts
+Budget Monitoring
      ↓
 Reports
      ↓
 Dashboard
-```
 
-This project demonstrates how basic Python programming concepts can be
-combined to build a useful real-world automation application.
+The project demonstrates how Python programming, file handling, modular design, testing, and a web dashboard can be combined to build a practical real-world application.
 
----
-
-## 👩‍💻 Author
+👩‍💻 Author
 
 Developed as a Python learning and automation project.
 
----
-
-## 📄 License
+📄 License
 
 This project is created for educational and portfolio purposes.
-
-```
-
-### One important note
-
-Keep this README **for the final version**. Some sections describe things we **haven't built yet**—especially the Streamlit dashboard, separated modules, and tests. That's intentional because those are the next stages of our project.
-
-**Don't create fake/empty files just to match the README.** We'll actually build each part next, and then the README will accurately describe the finished project.
-```
