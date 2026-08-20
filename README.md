@@ -95,7 +95,28 @@ The Streamlit dashboard provides:
 - Add Expense functionality
 - Start New Month functionality
 - Dashboard refresh functionality
+---
+## 📸 Screenshots
 
+### 📊 Dashboard
+
+![Expense Tracker Dashboard](screenshots/dashboard.png)
+
+### ➕ Add Expense
+
+![Add Expense](screenshots/add-expense.png)
+
+### 📅 Start New Month
+
+![Start New Month](screenshots/new-month.png)
+
+### 💻 Command-Line Application
+
+![CLI Expense Tracker](screenshots/CLI.png)
+
+### 📂 Project Structure
+
+![Project Structure](screenshots/project-structure.png)
 ---
 
 ## 🛠️ Technologies Used
